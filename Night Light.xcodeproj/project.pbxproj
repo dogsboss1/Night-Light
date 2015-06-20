@@ -16,6 +16,16 @@
 		A43A93461B3531CC001C45E7 /* Night_LightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A43A93451B3531CC001C45E7 /* Night_LightTests.m */; };
 		A43A93511B3536C9001C45E7 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A43A93501B3536C9001C45E7 /* PageContentViewController.m */; };
 		A43A93561B354356001C45E7 /* settingsPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A43A93551B354356001C45E7 /* settingsPageViewController.m */; };
+		A43A93621B356203001C45E7 /* black.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A93591B356203001C45E7 /* black.png */; };
+		A43A93631B356203001C45E7 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A935A1B356203001C45E7 /* blue.png */; };
+		A43A93641B356203001C45E7 /* cyan.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A935B1B356203001C45E7 /* cyan.png */; };
+		A43A93651B356203001C45E7 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A935C1B356203001C45E7 /* green.png */; };
+		A43A93661B356203001C45E7 /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A935D1B356203001C45E7 /* orange.png */; };
+		A43A93671B356203001C45E7 /* pink.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A935E1B356203001C45E7 /* pink.png */; };
+		A43A93681B356203001C45E7 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A935F1B356203001C45E7 /* red.png */; };
+		A43A93691B356203001C45E7 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A93601B356203001C45E7 /* white.png */; };
+		A43A936A1B356203001C45E7 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A93611B356203001C45E7 /* yellow.png */; };
+		A43A936C1B35620A001C45E7 /* rainbow.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A936B1B35620A001C45E7 /* rainbow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +56,16 @@
 		A43A93501B3536C9001C45E7 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 		A43A93541B354356001C45E7 /* settingsPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingsPageViewController.h; sourceTree = "<group>"; };
 		A43A93551B354356001C45E7 /* settingsPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingsPageViewController.m; sourceTree = "<group>"; };
+		A43A93591B356203001C45E7 /* black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = black.png; path = colours/black.png; sourceTree = "<group>"; };
+		A43A935A1B356203001C45E7 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue.png; path = colours/blue.png; sourceTree = "<group>"; };
+		A43A935B1B356203001C45E7 /* cyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cyan.png; path = colours/cyan.png; sourceTree = "<group>"; };
+		A43A935C1B356203001C45E7 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = green.png; path = colours/green.png; sourceTree = "<group>"; };
+		A43A935D1B356203001C45E7 /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orange.png; path = colours/orange.png; sourceTree = "<group>"; };
+		A43A935E1B356203001C45E7 /* pink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pink.png; path = colours/pink.png; sourceTree = "<group>"; };
+		A43A935F1B356203001C45E7 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red.png; path = colours/red.png; sourceTree = "<group>"; };
+		A43A93601B356203001C45E7 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white.png; path = colours/white.png; sourceTree = "<group>"; };
+		A43A93611B356203001C45E7 /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yellow.png; path = colours/yellow.png; sourceTree = "<group>"; };
+		A43A936B1B35620A001C45E7 /* rainbow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rainbow.png; path = colours/rainbow.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +107,7 @@
 		A43A93281B3531CC001C45E7 /* Night Light */ = {
 			isa = PBXGroup;
 			children = (
+				A43A93571B3561ED001C45E7 /* Images */,
 				A43A93531B3536ED001C45E7 /* Settings */,
 				A43A93521B3536D3001C45E7 /* Home */,
 				A43A93331B3531CC001C45E7 /* Main.storyboard */,
@@ -145,6 +166,31 @@
 				A43A93551B354356001C45E7 /* settingsPageViewController.m */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		A43A93571B3561ED001C45E7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A43A936B1B35620A001C45E7 /* rainbow.png */,
+				A43A93581B3561F3001C45E7 /* Colours */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		A43A93581B3561F3001C45E7 /* Colours */ = {
+			isa = PBXGroup;
+			children = (
+				A43A93591B356203001C45E7 /* black.png */,
+				A43A935A1B356203001C45E7 /* blue.png */,
+				A43A935B1B356203001C45E7 /* cyan.png */,
+				A43A935C1B356203001C45E7 /* green.png */,
+				A43A935D1B356203001C45E7 /* orange.png */,
+				A43A935E1B356203001C45E7 /* pink.png */,
+				A43A935F1B356203001C45E7 /* red.png */,
+				A43A93601B356203001C45E7 /* white.png */,
+				A43A93611B356203001C45E7 /* yellow.png */,
+			);
+			name = Colours;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,7 +273,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A43A93651B356203001C45E7 /* green.png in Resources */,
+				A43A936A1B356203001C45E7 /* yellow.png in Resources */,
+				A43A93661B356203001C45E7 /* orange.png in Resources */,
+				A43A93671B356203001C45E7 /* pink.png in Resources */,
+				A43A936C1B35620A001C45E7 /* rainbow.png in Resources */,
+				A43A93681B356203001C45E7 /* red.png in Resources */,
 				A43A93351B3531CC001C45E7 /* Main.storyboard in Resources */,
+				A43A93631B356203001C45E7 /* blue.png in Resources */,
+				A43A93641B356203001C45E7 /* cyan.png in Resources */,
+				A43A93691B356203001C45E7 /* white.png in Resources */,
+				A43A93621B356203001C45E7 /* black.png in Resources */,
 				A43A933A1B3531CC001C45E7 /* LaunchScreen.xib in Resources */,
 				A43A93371B3531CC001C45E7 /* Images.xcassets in Resources */,
 			);

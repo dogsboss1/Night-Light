@@ -17,8 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _pageImages = @[@"", @"", @"", @""];
-    _pageTitles = @[@"First", @"Second", @"Third", @"Fourth"];
+    _pageImages = @[@"White", @"Black", @"Blue", @"Cyan", @"Green", @"Orange", @"Pink", @"Red", @"Yellow", @"Rainbow"];
+    _pageTitles = @[@"White", @"Black", @"Blue", @"Cyan", @"Green", @"Orange", @"Pink", @"Red", @"Yellow", @"Rainbow"];
     
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.pageViewController.dataSource = self;
@@ -27,7 +27,7 @@
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
-    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 0);
     
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];

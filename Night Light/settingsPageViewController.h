@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface settingsPageViewController : UIViewController
+@interface settingsPageViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *TitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *chooseColourLabel;

@@ -17,4 +17,10 @@
 @property NSString *titleText;
 @property NSString *imageFile;
 
+@property NSInteger count;
+@property NSInteger time;
+@property NSTimer *timer;
+@property NSTimer *sleepTimer;
+
+
 @end
