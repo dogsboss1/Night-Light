@@ -12,6 +12,9 @@
 @interface ViewController : UIViewController <UIPageViewControllerDataSource>
 
 - (IBAction)startWalkthroughButtonPressed:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *startAgainButton;
+
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSArray *pageTitles;

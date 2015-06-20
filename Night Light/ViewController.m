@@ -17,8 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _pageImages = @[@"White", @"Black", @"Blue", @"Cyan", @"Green", @"Orange", @"Pink", @"Red", @"Yellow", @"Rainbow"];
-    _pageTitles = @[@"White", @"Black", @"Blue", @"Cyan", @"Green", @"Orange", @"Pink", @"Red", @"Yellow", @"Rainbow"];
+    _pageImages = @[@"white", @"black", @"blue", @"cyan", @"green", @"orange", @"pink", @"red", @"yellow", @"rainbow"];
+    _pageTitles = @[@"white", @"black", @"blue", @"cyan", @"green", @"orange", @"pink", @"red", @"yellow", @"rainbow"];
+    
+    [self.startAgainButton setTitle:@" " forState:UIControlStateNormal];
     
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.pageViewController.dataSource = self;
@@ -46,6 +48,16 @@
     pageContentViewController.imageFile = self.pageImages[index];
     pageContentViewController.titleText = self.pageTitles[index];
     pageContentViewController.pageIndex = index;
+    
+    self.backgroundImage.image = [UIImage imageNamed:_pageImages[index]];
+    NSLog(@"%ld", index);
+    
+    if (index == 1) {
+        pageContentViewController.textColour = @"white";
+    }
+    else {
+        pageContentViewController.textColour = @"black";
+    }
     
     return pageContentViewController;
 }
@@ -88,7 +100,6 @@
 {
     return 0;
 }
-
 
 - (IBAction)startWalkthroughButtonPressed:(UIButton *)sender {
     PageContentViewController *startingViewController = [self viewControllerAtIndex:0];

@@ -13,6 +13,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIPickerView *timePickerView;
 
+- (IBAction)settingsButtonPressed:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
+
 @property NSUInteger pageIndex;
 @property NSString *titleText;
 @property NSString *imageFile;
@@ -22,5 +25,6 @@
 @property NSTimer *timer;
 @property NSTimer *sleepTimer;
 
+@property NSString *textColour;
 
 @end

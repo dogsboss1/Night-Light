@@ -1,20 +1,20 @@
 //
-//  PageContentViewController.m
+//  staticViewController.m
 //  Night Light
 //
 //  Created by felix king on 20/06/2015.
 //  Copyright (c) 2015 Felix King. All rights reserved.
 //
 
-#import "PageContentViewController.h"
+#import "staticViewController.h"
 
-@interface PageContentViewController () {
+@interface staticViewController () {
     NSArray *_pickerData;
 }
 
 @end
 
-@implementation PageContentViewController
+@implementation staticViewController
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -27,22 +27,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.backgroundImage.image = [UIImage imageNamed:self.imageFile];
-    self.titleLabel.text = self.titleText;
-    if ([self.textColour isEqualToString:@"white"]) {
+    NSLog(@"colour: %ld", [self.delegate getCurentColour]);
+    
+    _pickerData = @[@"5", @"10", @"20", @"30", @"45", @"1 Min", @"1.5 Mins", @"2 Mins", @"2.5 Mins", @"3 Mins", @"5 Mins"];
+    self.pageTitles = @[@"white", @"black", @"blue", @"cyan", @"green", @"orange", @"pink", @"red", @"yellow", @"rainbow"];
+    
+    self.backgroundImage.image = [UIImage imageNamed:self.pageTitles[[self.delegate getCurentColour]]];
+    self.titleLabel.text = self.pageTitles[[self.delegate getCurentColour]];
+    
+    if ([self.pageTitles[[self.delegate getCurentColour]] isEqualToString:@"black"]) {
         self.titleLabel.textColor = [UIColor whiteColor];
-        self.timePickerView.backgroundColor = [UIColor whiteColor];
+        self.timePicker.backgroundColor = [UIColor whiteColor];
+        [self.backButton setImage:[UIImage imageNamed:@"backArrowsWhite"] forState:UIControlStateNormal];
         [self.settingsButton setImage:[UIImage imageNamed:@"settingsWhite"] forState:UIControlStateNormal];
     }
     else {
         self.titleLabel.textColor = [UIColor blackColor];
-        self.timePickerView.backgroundColor = [UIColor clearColor];
+        self.timePicker.backgroundColor = [UIColor clearColor];
+        [self.backButton setImage:[UIImage imageNamed:@"backArrows"] forState:UIControlStateNormal];
         [self.settingsButton setImage:[UIImage imageNamed:@"settings"] forState:UIControlStateNormal];
     }
-    _pickerData = @[@"5", @"10", @"20", @"30", @"45", @"1 Min", @"1.5 Mins", @"2 Mins", @"2.5 Mins", @"3 Mins", @"5 Mins"];
     
-    self.timePickerView.dataSource = self;
-    self.timePickerView.delegate = self;
+    self.timePicker.dataSource = self;
+    self.timePicker.delegate = self;
     
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 }
@@ -96,15 +103,6 @@
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDown) userInfo:nil repeats:YES];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"settingsSegue"]) {
-        
-        // get desitantion VC
-        
-        // pass the info to your new desination
-    }
-}
-
 - (void) sleepDevice {
     [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
     NSLog(@"Device is alseep");
@@ -128,5 +126,10 @@
 }
 
 - (IBAction)settingsButtonPressed:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)backButtonPressed:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"oldStyleSegue" sender:self];
 }
 @end

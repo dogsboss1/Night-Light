@@ -26,6 +26,13 @@
 		A43A93691B356203001C45E7 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A93601B356203001C45E7 /* white.png */; };
 		A43A936A1B356203001C45E7 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A93611B356203001C45E7 /* yellow.png */; };
 		A43A936C1B35620A001C45E7 /* rainbow.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A936B1B35620A001C45E7 /* rainbow.png */; };
+		A43A93701B3582B5001C45E7 /* staticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A43A936F1B3582B5001C45E7 /* staticViewController.m */; };
+		A43A93741B358EE4001C45E7 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A93711B358EE4001C45E7 /* settings.png */; };
+		A43A93751B358EE4001C45E7 /* backArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A93721B358EE4001C45E7 /* backArrow.png */; };
+		A43A937D1B359B9B001C45E7 /* backArrows.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A93791B359B9B001C45E7 /* backArrows.png */; };
+		A43A937E1B359B9B001C45E7 /* backArrowsWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A937A1B359B9B001C45E7 /* backArrowsWhite.png */; };
+		A43A937F1B359B9B001C45E7 /* backArrowWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A937B1B359B9B001C45E7 /* backArrowWhite.png */; };
+		A43A93801B359B9B001C45E7 /* settingsWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = A43A937C1B359B9B001C45E7 /* settingsWhite.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +73,14 @@
 		A43A93601B356203001C45E7 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white.png; path = colours/white.png; sourceTree = "<group>"; };
 		A43A93611B356203001C45E7 /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yellow.png; path = colours/yellow.png; sourceTree = "<group>"; };
 		A43A936B1B35620A001C45E7 /* rainbow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rainbow.png; path = colours/rainbow.png; sourceTree = "<group>"; };
+		A43A936E1B3582B5001C45E7 /* staticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = staticViewController.h; sourceTree = "<group>"; };
+		A43A936F1B3582B5001C45E7 /* staticViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = staticViewController.m; sourceTree = "<group>"; };
+		A43A93711B358EE4001C45E7 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = Images/settings.png; sourceTree = SOURCE_ROOT; };
+		A43A93721B358EE4001C45E7 /* backArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backArrow.png; path = Images/backArrow.png; sourceTree = SOURCE_ROOT; };
+		A43A93791B359B9B001C45E7 /* backArrows.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backArrows.png; path = Images/backArrows.png; sourceTree = SOURCE_ROOT; };
+		A43A937A1B359B9B001C45E7 /* backArrowsWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backArrowsWhite.png; path = Images/backArrowsWhite.png; sourceTree = SOURCE_ROOT; };
+		A43A937B1B359B9B001C45E7 /* backArrowWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backArrowWhite.png; path = Images/backArrowWhite.png; sourceTree = SOURCE_ROOT; };
+		A43A937C1B359B9B001C45E7 /* settingsWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settingsWhite.png; path = Images/settingsWhite.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				A43A93571B3561ED001C45E7 /* Images */,
+				A43A936D1B358296001C45E7 /* Still VC */,
 				A43A93531B3536ED001C45E7 /* Settings */,
 				A43A93521B3536D3001C45E7 /* Home */,
 				A43A93331B3531CC001C45E7 /* Main.storyboard */,
@@ -171,6 +187,12 @@
 		A43A93571B3561ED001C45E7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A43A93791B359B9B001C45E7 /* backArrows.png */,
+				A43A937A1B359B9B001C45E7 /* backArrowsWhite.png */,
+				A43A937B1B359B9B001C45E7 /* backArrowWhite.png */,
+				A43A937C1B359B9B001C45E7 /* settingsWhite.png */,
+				A43A93711B358EE4001C45E7 /* settings.png */,
+				A43A93721B358EE4001C45E7 /* backArrow.png */,
 				A43A936B1B35620A001C45E7 /* rainbow.png */,
 				A43A93581B3561F3001C45E7 /* Colours */,
 			);
@@ -191,6 +213,15 @@
 				A43A93611B356203001C45E7 /* yellow.png */,
 			);
 			name = Colours;
+			sourceTree = "<group>";
+		};
+		A43A936D1B358296001C45E7 /* Still VC */ = {
+			isa = PBXGroup;
+			children = (
+				A43A936E1B3582B5001C45E7 /* staticViewController.h */,
+				A43A936F1B3582B5001C45E7 /* staticViewController.m */,
+			);
+			name = "Still VC";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,17 +304,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A43A937D1B359B9B001C45E7 /* backArrows.png in Resources */,
 				A43A93651B356203001C45E7 /* green.png in Resources */,
 				A43A936A1B356203001C45E7 /* yellow.png in Resources */,
+				A43A93741B358EE4001C45E7 /* settings.png in Resources */,
 				A43A93661B356203001C45E7 /* orange.png in Resources */,
 				A43A93671B356203001C45E7 /* pink.png in Resources */,
+				A43A937F1B359B9B001C45E7 /* backArrowWhite.png in Resources */,
 				A43A936C1B35620A001C45E7 /* rainbow.png in Resources */,
+				A43A93751B358EE4001C45E7 /* backArrow.png in Resources */,
 				A43A93681B356203001C45E7 /* red.png in Resources */,
 				A43A93351B3531CC001C45E7 /* Main.storyboard in Resources */,
 				A43A93631B356203001C45E7 /* blue.png in Resources */,
 				A43A93641B356203001C45E7 /* cyan.png in Resources */,
 				A43A93691B356203001C45E7 /* white.png in Resources */,
 				A43A93621B356203001C45E7 /* black.png in Resources */,
+				A43A93801B359B9B001C45E7 /* settingsWhite.png in Resources */,
+				A43A937E1B359B9B001C45E7 /* backArrowsWhite.png in Resources */,
 				A43A933A1B3531CC001C45E7 /* LaunchScreen.xib in Resources */,
 				A43A93371B3531CC001C45E7 /* Images.xcassets in Resources */,
 			);
@@ -303,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A43A93701B3582B5001C45E7 /* staticViewController.m in Sources */,
 				A43A93561B354356001C45E7 /* settingsPageViewController.m in Sources */,
 				A43A93321B3531CC001C45E7 /* ViewController.m in Sources */,
 				A43A93511B3536C9001C45E7 /* PageContentViewController.m in Sources */,

@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _colourPickerData = @[@"Black", @"Blue", @"Cyan", @"Green", @"Orange", @"Pink", @"Red", @"White", @"Yellow", @"Rainbow"];
+    _colourPickerData = @[@"white", @"black", @"blue", @"cyan", @"green", @"orange", @"pink", @"red", @"yellow", @"rainbow"];
     self.colourPicker.delegate = self;
     self.colourPicker.dataSource = self;
     
@@ -39,10 +39,39 @@
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return _colourPickerData[row];
+    return [_colourPickerData[row] capitalizedString];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.backgroundImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", _colourPickerData[row]]];
+    self.currentColour = row;
+    if (row == 0) {
+        self.colourPicker.backgroundColor = [UIColor whiteColor];
+        self.TitleLabel.textColor = [UIColor whiteColor];
+        self.chooseColourLabel.textColor = [UIColor whiteColor];
+        [self.backButton setImage:[UIImage imageNamed:@"backArrowWhite"] forState:UIControlStateNormal];
+    }
+    else {
+        self.colourPicker.backgroundColor = [UIColor clearColor];
+        self.TitleLabel.textColor = [UIColor blackColor];
+        self.chooseColourLabel.textColor = [UIColor blackColor];
+        [self.backButton setImage:[UIImage imageNamed:@"backArrow"] forState:UIControlStateNormal];
+    }
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"staticSegue"]) {
+        
+        // get desitantion VC
+        staticViewController *vc = [segue destinationViewController];
+        
+        // pass the info to your new desination
+        vc.delegate = self;
+    }
+}
+
+- (NSInteger)getCurentColour {
+    return self.currentColour;
+}
+
 @end
