@@ -15,6 +15,7 @@
 		A43A933A1B3531CC001C45E7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A43A93381B3531CC001C45E7 /* LaunchScreen.xib */; };
 		A43A93461B3531CC001C45E7 /* Night_LightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A43A93451B3531CC001C45E7 /* Night_LightTests.m */; };
 		A43A93511B3536C9001C45E7 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A43A93501B3536C9001C45E7 /* PageContentViewController.m */; };
+		A43A93561B354356001C45E7 /* settingsPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A43A93551B354356001C45E7 /* settingsPageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		A43A93451B3531CC001C45E7 /* Night_LightTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Night_LightTests.m; sourceTree = "<group>"; };
 		A43A934F1B3536C9001C45E7 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		A43A93501B3536C9001C45E7 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		A43A93541B354356001C45E7 /* settingsPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingsPageViewController.h; sourceTree = "<group>"; };
+		A43A93551B354356001C45E7 /* settingsPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingsPageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 		A43A93531B3536ED001C45E7 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				A43A93541B354356001C45E7 /* settingsPageViewController.h */,
+				A43A93551B354356001C45E7 /* settingsPageViewController.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A43A93561B354356001C45E7 /* settingsPageViewController.m in Sources */,
 				A43A93321B3531CC001C45E7 /* ViewController.m in Sources */,
 				A43A93511B3536C9001C45E7 /* PageContentViewController.m in Sources */,
 				A43A932F1B3531CC001C45E7 /* AppDelegate.m in Sources */,

@@ -72,6 +72,15 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Itj-eE-F4b">
                                 <rect key="frame" x="0.0" y="418" width="600" height="162"/>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFn-Kw-ZEL">
+                                <rect key="frame" x="527" y="20" width="57" height="30"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fM3-fc-r84" kind="presentation" id="hu1-Sa-dJc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -96,6 +105,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JEj-Mm-J2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1204" y="868"/>
+        </scene>
+        <!--Settings Page View Controller-->
+        <scene sceneID="efT-CS-R3D">
+            <objects>
+                <viewController id="fM3-fc-r84" customClass="settingsPageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TAp-FT-2tv"/>
+                        <viewControllerLayoutGuide type="bottom" id="txm-cj-tQU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QL3-ia-xoZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oVP-bR-CTV">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4X0-ee-PPH">
+                                <rect key="frame" x="0.0" y="430" width="600" height="162"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYc-Lt-UK8">
+                                <rect key="frame" x="269" y="33" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a colour" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBl-c5-pzJ">
+                                <rect key="frame" x="211" y="401" width="179" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKd-2k-D2J">
+                                <rect key="frame" x="16" y="20" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="fM3-fc-r84" eventType="touchUpInside" id="xW3-bk-8rc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4X0-ee-PPH" firstAttribute="trailing" secondItem="oVP-bR-CTV" secondAttribute="trailing" id="1tj-mP-IgD"/>
+                            <constraint firstItem="kKd-2k-D2J" firstAttribute="top" secondItem="TAp-FT-2tv" secondAttribute="bottom" id="6gx-4z-PVZ"/>
+                            <constraint firstItem="wYc-Lt-UK8" firstAttribute="top" secondItem="TAp-FT-2tv" secondAttribute="bottom" constant="13" id="9dF-7K-fbQ"/>
+                            <constraint firstItem="oVP-bR-CTV" firstAttribute="bottom" secondItem="txm-cj-tQU" secondAttribute="top" id="FKa-Sz-xFz"/>
+                            <constraint firstItem="4X0-ee-PPH" firstAttribute="top" secondItem="YBl-c5-pzJ" secondAttribute="bottom" constant="8" symbolic="YES" id="P8E-Xl-JGa"/>
+                            <constraint firstItem="4X0-ee-PPH" firstAttribute="leading" secondItem="oVP-bR-CTV" secondAttribute="leading" id="Pii-YP-Xnx"/>
+                            <constraint firstItem="YBl-c5-pzJ" firstAttribute="centerX" secondItem="4X0-ee-PPH" secondAttribute="centerX" id="Udm-AS-1G3"/>
+                            <constraint firstItem="txm-cj-tQU" firstAttribute="top" secondItem="4X0-ee-PPH" secondAttribute="bottom" constant="8" symbolic="YES" id="gC4-uF-LiX"/>
+                            <constraint firstItem="kKd-2k-D2J" firstAttribute="leading" secondItem="QL3-ia-xoZ" secondAttribute="leadingMargin" id="nbg-8U-ozH"/>
+                            <constraint firstItem="oVP-bR-CTV" firstAttribute="leading" secondItem="QL3-ia-xoZ" secondAttribute="leading" id="oPS-OH-hBG"/>
+                            <constraint firstItem="YBl-c5-pzJ" firstAttribute="centerX" secondItem="wYc-Lt-UK8" secondAttribute="centerX" id="ra0-Nj-c64"/>
+                            <constraint firstAttribute="trailing" secondItem="4X0-ee-PPH" secondAttribute="trailing" id="s8U-bH-po0"/>
+                            <constraint firstItem="oVP-bR-CTV" firstAttribute="top" secondItem="QL3-ia-xoZ" secondAttribute="top" id="ttk-Ou-uJd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="TitleLabel" destination="wYc-Lt-UK8" id="kpH-wt-Sdb"/>
+                        <outlet property="backgroundImage" destination="oVP-bR-CTV" id="AjD-Hr-ZLl"/>
+                        <outlet property="chooseColourLabel" destination="YBl-c5-pzJ" id="WsA-bk-Ch5"/>
+                        <outlet property="colourPicker" destination="4X0-ee-PPH" id="kA7-kx-wxo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yRL-3Q-uAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2023" y="868"/>
         </scene>
     </scenes>
 </document>
