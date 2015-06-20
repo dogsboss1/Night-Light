@@ -15,8 +15,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *chooseColourLabel;
 
 - (IBAction)backButtonPressed:(UIButton *)sender;
-
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
+
+- (IBAction)staticViewButtonPressed:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *staticViewButton;
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 

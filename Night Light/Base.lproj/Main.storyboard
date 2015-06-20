@@ -186,9 +186,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1x-qp-ySO">
                                 <rect key="frame" x="223" y="400" width="155" height="30"/>
                                 <state key="normal" title="screen with this colour">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="staticViewButtonPressed:" destination="fM3-fc-r84" eventType="touchUpInside" id="Oz1-rD-MXP"/>
                                     <segue destination="jbB-Id-Gtv" kind="presentation" identifier="staticSegue" id="gqa-01-gTc"/>
                                 </connections>
                             </button>
@@ -226,6 +227,7 @@
                         <outlet property="backgroundImage" destination="oVP-bR-CTV" id="AjD-Hr-ZLl"/>
                         <outlet property="chooseColourLabel" destination="YBl-c5-pzJ" id="WsA-bk-Ch5"/>
                         <outlet property="colourPicker" destination="4X0-ee-PPH" id="kA7-kx-wxo"/>
+                        <outlet property="staticViewButton" destination="Q1x-qp-ySO" id="NaL-oe-aoh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yRL-3Q-uAS" userLabel="First Responder" sceneMemberID="firstResponder"/>

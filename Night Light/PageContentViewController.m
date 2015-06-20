@@ -128,5 +128,9 @@
 }
 
 - (IBAction)settingsButtonPressed:(UIButton *)sender {
+    [self.timer invalidate];
+    [self.sleepTimer invalidate];
+    self.timer = nil;
+    self.sleepTimer = nil;
 }
 @end

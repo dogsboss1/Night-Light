@@ -45,17 +45,26 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.backgroundImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", _colourPickerData[row]]];
     self.currentColour = row;
-    if (row == 0) {
+    if (row == 1) {
         self.colourPicker.backgroundColor = [UIColor whiteColor];
         self.TitleLabel.textColor = [UIColor whiteColor];
         self.chooseColourLabel.textColor = [UIColor whiteColor];
         [self.backButton setImage:[UIImage imageNamed:@"backArrowWhite"] forState:UIControlStateNormal];
+        [self.staticViewButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    }
+    else if (row == 2) {
+        [self.staticViewButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        self.colourPicker.backgroundColor = [UIColor clearColor];
+        self.TitleLabel.textColor = [UIColor blackColor];
+        self.chooseColourLabel.textColor = [UIColor blackColor];
+        [self.backButton setImage:[UIImage imageNamed:@"backArrow"] forState:UIControlStateNormal];
     }
     else {
         self.colourPicker.backgroundColor = [UIColor clearColor];
         self.TitleLabel.textColor = [UIColor blackColor];
         self.chooseColourLabel.textColor = [UIColor blackColor];
         [self.backButton setImage:[UIImage imageNamed:@"backArrow"] forState:UIControlStateNormal];
+        [self.staticViewButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     }
 }
 
@@ -74,4 +83,7 @@
     return self.currentColour;
 }
 
+- (IBAction)staticViewButtonPressed:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"staticSegue" sender:self];
+}
 @end
