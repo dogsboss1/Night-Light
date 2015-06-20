@@ -14,6 +14,7 @@
 		A43A93371B3531CC001C45E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A43A93361B3531CC001C45E7 /* Images.xcassets */; };
 		A43A933A1B3531CC001C45E7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A43A93381B3531CC001C45E7 /* LaunchScreen.xib */; };
 		A43A93461B3531CC001C45E7 /* Night_LightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A43A93451B3531CC001C45E7 /* Night_LightTests.m */; };
+		A43A93511B3536C9001C45E7 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A43A93501B3536C9001C45E7 /* PageContentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		A43A933F1B3531CC001C45E7 /* Night LightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Night LightTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43A93441B3531CC001C45E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A43A93451B3531CC001C45E7 /* Night_LightTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Night_LightTests.m; sourceTree = "<group>"; };
+		A43A934F1B3536C9001C45E7 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		A43A93501B3536C9001C45E7 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				A43A93281B3531CC001C45E7 /* Night Light */,
-				A43A93421B3531CC001C45E7 /* Night LightTests */,
-				A43A93271B3531CC001C45E7 /* Products */,
+				A43A93291B3531CC001C45E7 /* Supporting Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,19 +78,17 @@
 				A43A933F1B3531CC001C45E7 /* Night LightTests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		A43A93281B3531CC001C45E7 /* Night Light */ = {
 			isa = PBXGroup;
 			children = (
-				A43A932D1B3531CC001C45E7 /* AppDelegate.h */,
-				A43A932E1B3531CC001C45E7 /* AppDelegate.m */,
-				A43A93301B3531CC001C45E7 /* ViewController.h */,
-				A43A93311B3531CC001C45E7 /* ViewController.m */,
+				A43A93531B3536ED001C45E7 /* Settings */,
+				A43A93521B3536D3001C45E7 /* Home */,
 				A43A93331B3531CC001C45E7 /* Main.storyboard */,
 				A43A93361B3531CC001C45E7 /* Images.xcassets */,
 				A43A93381B3531CC001C45E7 /* LaunchScreen.xib */,
-				A43A93291B3531CC001C45E7 /* Supporting Files */,
 			);
 			path = "Night Light";
 			sourceTree = "<group>";
@@ -96,10 +96,15 @@
 		A43A93291B3531CC001C45E7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A43A93421B3531CC001C45E7 /* Night LightTests */,
+				A43A93271B3531CC001C45E7 /* Products */,
+				A43A932D1B3531CC001C45E7 /* AppDelegate.h */,
+				A43A932E1B3531CC001C45E7 /* AppDelegate.m */,
 				A43A932A1B3531CC001C45E7 /* Info.plist */,
 				A43A932B1B3531CC001C45E7 /* main.m */,
 			);
 			name = "Supporting Files";
+			path = "Night Light";
 			sourceTree = "<group>";
 		};
 		A43A93421B3531CC001C45E7 /* Night LightTests */ = {
@@ -109,7 +114,7 @@
 				A43A93431B3531CC001C45E7 /* Supporting Files */,
 			);
 			path = "Night LightTests";
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		A43A93431B3531CC001C45E7 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -117,6 +122,24 @@
 				A43A93441B3531CC001C45E7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A43A93521B3536D3001C45E7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A43A93301B3531CC001C45E7 /* ViewController.h */,
+				A43A93311B3531CC001C45E7 /* ViewController.m */,
+				A43A934F1B3536C9001C45E7 /* PageContentViewController.h */,
+				A43A93501B3536C9001C45E7 /* PageContentViewController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		A43A93531B3536ED001C45E7 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A43A93321B3531CC001C45E7 /* ViewController.m in Sources */,
+				A43A93511B3536C9001C45E7 /* PageContentViewController.m in Sources */,
 				A43A932F1B3531CC001C45E7 /* AppDelegate.m in Sources */,
 				A43A932C1B3531CC001C45E7 /* main.m in Sources */,
 			);
