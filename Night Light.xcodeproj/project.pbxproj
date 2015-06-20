@@ -89,6 +89,8 @@
 				A43A93331B3531CC001C45E7 /* Main.storyboard */,
 				A43A93361B3531CC001C45E7 /* Images.xcassets */,
 				A43A93381B3531CC001C45E7 /* LaunchScreen.xib */,
+				A43A932D1B3531CC001C45E7 /* AppDelegate.h */,
+				A43A932E1B3531CC001C45E7 /* AppDelegate.m */,
 			);
 			path = "Night Light";
 			sourceTree = "<group>";
@@ -98,8 +100,6 @@
 			children = (
 				A43A93421B3531CC001C45E7 /* Night LightTests */,
 				A43A93271B3531CC001C45E7 /* Products */,
-				A43A932D1B3531CC001C45E7 /* AppDelegate.h */,
-				A43A932E1B3531CC001C45E7 /* AppDelegate.m */,
 				A43A932A1B3531CC001C45E7 /* Info.plist */,
 				A43A932B1B3531CC001C45E7 /* main.m */,
 			);
