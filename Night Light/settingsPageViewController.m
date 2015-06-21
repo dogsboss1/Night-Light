@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.brightnessSlider.value = [UIScreen mainScreen].brightness;
+    
     _colourPickerData = @[@"white", @"black", @"blue", @"cyan", @"green", @"orange", @"pink", @"red", @"yellow", @"rainbow"];
     self.colourPicker.delegate = self;
     self.colourPicker.dataSource = self;
@@ -51,6 +53,7 @@
         self.chooseColourLabel.textColor = [UIColor whiteColor];
         [self.backButton setImage:[UIImage imageNamed:@"backArrowWhite"] forState:UIControlStateNormal];
         [self.staticViewButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        self.brightnessLabel.textColor = [UIColor whiteColor];
     }
     else if (row == 2) {
         [self.staticViewButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -58,6 +61,7 @@
         self.TitleLabel.textColor = [UIColor blackColor];
         self.chooseColourLabel.textColor = [UIColor blackColor];
         [self.backButton setImage:[UIImage imageNamed:@"backArrow"] forState:UIControlStateNormal];
+        self.brightnessLabel.textColor = [UIColor blackColor];
     }
     else {
         self.colourPicker.backgroundColor = [UIColor clearColor];
@@ -65,6 +69,7 @@
         self.chooseColourLabel.textColor = [UIColor blackColor];
         [self.backButton setImage:[UIImage imageNamed:@"backArrow"] forState:UIControlStateNormal];
         [self.staticViewButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        self.brightnessLabel.textColor = [UIColor blackColor];
     }
 }
 
@@ -86,4 +91,9 @@
 - (IBAction)staticViewButtonPressed:(UIButton *)sender {
     [self performSegueWithIdentifier:@"staticSegue" sender:self];
 }
+
+- (IBAction)brightnessSliderChanged:(UISlider *)sender {
+    [UIScreen mainScreen].brightness = self.brightnessSlider.value;
+}
+
 @end

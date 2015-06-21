@@ -29,6 +29,11 @@
 
 @property (weak, nonatomic) IBOutlet UIPickerView *timePicker;
 
+- (IBAction)brightnessSliderChanged:(UISlider *)sender;
+@property (weak, nonatomic) IBOutlet UISlider *brightnessSlider;
+
+@property (weak, nonatomic) IBOutlet UILabel *brightnessLabel;
+
 @property (strong, nonatomic) NSArray *pageTitles;
 
 @property NSInteger count;
@@ -37,6 +42,9 @@
 @property NSTimer *sleepTimer;
 
 @property NSString *textColour;
+
+@property NSInteger mins;
+@property NSInteger secs;
 
 @property (nonatomic, weak) id<staticViewDelegate> delegate;
 

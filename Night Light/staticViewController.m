@@ -27,7 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"colour: %ld", [self.delegate getCurentColour]);
+    //NSLog(@"colour: %ld", [self.delegate getCurentColour]);
+    
+    self.brightnessSlider.value = [UIScreen mainScreen].brightness;
     
     _pickerData = @[@"5", @"10", @"20", @"30", @"45", @"1 Min", @"1.5 Mins", @"2 Mins", @"2.5 Mins", @"3 Mins", @"5 Mins"];
     self.pageTitles = @[@"white", @"black", @"blue", @"cyan", @"green", @"orange", @"pink", @"red", @"yellow", @"rainbow"];
@@ -40,12 +42,14 @@
         self.timePicker.backgroundColor = [UIColor whiteColor];
         [self.backButton setImage:[UIImage imageNamed:@"backArrowsWhite"] forState:UIControlStateNormal];
         [self.settingsButton setImage:[UIImage imageNamed:@"settingsWhite"] forState:UIControlStateNormal];
+        self.brightnessLabel.textColor = [UIColor whiteColor];
     }
     else {
         self.titleLabel.textColor = [UIColor blackColor];
         self.timePicker.backgroundColor = [UIColor clearColor];
         [self.backButton setImage:[UIImage imageNamed:@"backArrows"] forState:UIControlStateNormal];
         [self.settingsButton setImage:[UIImage imageNamed:@"settings"] forState:UIControlStateNormal];
+        self.brightnessLabel.textColor = [UIColor blackColor];
     }
     
     self.timePicker.dataSource = self;
@@ -65,6 +69,23 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return _pickerData[row];
 }
+/*
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, pickerView.frame.size.width, 44)];
+    if ([self.pageTitles[[self.delegate getCurentColour]] isEqualToString:@"black"]) {
+        label.textColor = [UIColor blackColor];
+        label.text = @"hello";//_pickerData[row];
+        label.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18];
+        label.backgroundColor = [UIColor clearColor];
+    } else {
+        label.textColor = [UIColor blackColor];
+        label.text = @"Hi";//_pickerData[row];
+        label.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18];
+        label.backgroundColor = [UIColor clearColor];
+    }
+    return label;
+}*/
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.titleLabel.text = [NSString stringWithFormat:@"%@", _pickerData[row]];
@@ -73,8 +94,9 @@
     [self.sleepTimer invalidate];
     self.timer = nil;
     self.sleepTimer = nil;
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     
-    //self.count = 0;
+    self.count = 0;
     
     if (row == 0) {
         self.time = 5;
@@ -99,7 +121,7 @@
     } else if (row == 10) {
         self.time = 300;
     }
-    self.sleepTimer = [NSTimer scheduledTimerWithTimeInterval:self.time target:self selector:@selector(sleepDevice) userInfo:nil repeats:NO];
+    self.sleepTimer = [NSTimer scheduledTimerWithTimeInterval:self.time + 1 target:self selector:@selector(sleepDevice) userInfo:nil repeats:NO];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDown) userInfo:nil repeats:YES];
 }
 
@@ -113,9 +135,43 @@
 
 - (void) countDown {
     self.count += 1;
-    if (self.time - self.count >= 0) {
-        self.titleLabel.text = [NSString stringWithFormat:@"%ld", self.time - self.count];
+    if (self.time - 1 - self.count >= 0) {
+        if ((self.time - self.count) / 60 >= 1) {
+            self.mins = (self.time - self.count) / 60;
+            self.secs = (self.time - self.count) - self.mins * 60;
+            if (self.mins > 1 && self.secs > 1) {
+                self.titleLabel.text = [NSString stringWithFormat:@"%ld Mins %ld Secs", self.mins, self.secs];
+            }
+            else if (self.mins > 1 && self.secs == 0) {
+                self.titleLabel.text = [NSString stringWithFormat:@"%ld Mins", self.mins];
+            }
+            else if (self.mins > 1 && self.secs == 1){
+                self.titleLabel.text = [NSString stringWithFormat:@"%ld Mins %ld Sec", self.mins, self.secs];
+            }
+            else if (self.mins == 1 && self.secs > 1) {
+                self.titleLabel.text = [NSString stringWithFormat:@"%ld Min %ld Secs", self.mins, self.secs];
+            }
+            else if (self.mins == 1 && self.secs == 1) {
+                self.titleLabel.text = [NSString stringWithFormat:@"%ld Min %ld Sec", self.mins, self.secs];
+            }
+            else if (self.mins == 1 && self.secs == 0) {
+                self.titleLabel.text = @"1 Min";//[NSString stringWithFormat:@"%ld Mins", self.mins];
+            }
+            else {
+                self.titleLabel.text = @"Hello";
+            }
+        }
+        else {
+            self.secs = self.time - self.count;
+            if (self.secs > 1) {
+                self.titleLabel.text = [NSString stringWithFormat:@"%ld Secs", self.secs];
+            }
+            else {
+                self.titleLabel.text = [NSString stringWithFormat:@"%ld Sec", self.secs];
+            }
+        }
         NSLog(@"time: %ld count: %ld time - count %ld", self.time, self.count, self.time - self.count);
+        [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     } else {
         [self.timer invalidate];
         self.timer = nil;
@@ -123,13 +179,29 @@
         NSLog(@"Stopped Timer");
         self.titleLabel.text = @"Good Night";
     }
+    //NSLog(@"Mins:  %ld, secs: %ld", self.mins, self.secs);
 }
 
+
 - (IBAction)settingsButtonPressed:(UIButton *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self performSegueWithIdentifier:@"staticSettingsSegue" sender:self];
+    [self.timer invalidate];
+    [self.sleepTimer invalidate];
+    self.timer = nil;
+    self.sleepTimer = nil;
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 }
 
 - (IBAction)backButtonPressed:(UIButton *)sender {
     [self performSegueWithIdentifier:@"oldStyleSegue" sender:self];
+    [self.timer invalidate];
+    [self.sleepTimer invalidate];
+    self.timer = nil;
+    self.sleepTimer = nil;
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+}
+
+- (IBAction)brightnessSliderChanged:(UISlider *)sender {
+    [UIScreen mainScreen].brightness = self.brightnessSlider.value;
 }
 @end

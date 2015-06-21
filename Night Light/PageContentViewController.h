@@ -16,6 +16,11 @@
 - (IBAction)settingsButtonPressed:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 
+- (IBAction)brightnessSliderChanged:(UISlider *)sender;
+@property (weak, nonatomic) IBOutlet UISlider *brightnessSlider;
+
+@property (weak, nonatomic) IBOutlet UILabel *brightnessLabel;
+
 @property NSUInteger pageIndex;
 @property NSString *titleText;
 @property NSString *imageFile;
@@ -26,5 +31,8 @@
 @property NSTimer *sleepTimer;
 
 @property NSString *textColour;
+
+@property NSInteger mins;
+@property NSInteger secs;
 
 @end

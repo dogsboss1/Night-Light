@@ -551,6 +551,7 @@
 				A43A934B1B3531CC001C45E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A43A934C1B3531CC001C45E7 /* Build configuration list for PBXNativeTarget "Night LightTests" */ = {
 			isa = XCConfigurationList;
@@ -559,6 +560,7 @@
 				A43A934E1B3531CC001C45E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

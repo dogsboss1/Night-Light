@@ -27,17 +27,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.brightnessSlider.value = [UIScreen mainScreen].brightness;
+    
     self.backgroundImage.image = [UIImage imageNamed:self.imageFile];
     self.titleLabel.text = self.titleText;
     if ([self.textColour isEqualToString:@"white"]) {
         self.titleLabel.textColor = [UIColor whiteColor];
         self.timePickerView.backgroundColor = [UIColor whiteColor];
         [self.settingsButton setImage:[UIImage imageNamed:@"settingsWhite"] forState:UIControlStateNormal];
+        self.brightnessLabel.textColor = [UIColor whiteColor];
     }
     else {
         self.titleLabel.textColor = [UIColor blackColor];
         self.timePickerView.backgroundColor = [UIColor clearColor];
         [self.settingsButton setImage:[UIImage imageNamed:@"settings"] forState:UIControlStateNormal];
+        self.brightnessLabel.textColor = [UIColor blackColor];
     }
     _pickerData = @[@"5", @"10", @"20", @"30", @"45", @"1 Min", @"1.5 Mins", @"2 Mins", @"2.5 Mins", @"3 Mins", @"5 Mins"];
     
@@ -66,8 +70,9 @@
     [self.sleepTimer invalidate];
     self.timer = nil;
     self.sleepTimer = nil;
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     
-    //self.count = 0;
+    self.count = 0;
     
     if (row == 0) {
         self.time = 5;
@@ -92,7 +97,7 @@
     } else if (row == 10) {
         self.time = 300;
     }
-    self.sleepTimer = [NSTimer scheduledTimerWithTimeInterval:self.time target:self selector:@selector(sleepDevice) userInfo:nil repeats:NO];
+    self.sleepTimer = [NSTimer scheduledTimerWithTimeInterval:self.time + 1 target:self selector:@selector(sleepDevice) userInfo:nil repeats:NO];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDown) userInfo:nil repeats:YES];
 }
 
@@ -115,8 +120,16 @@
 
 - (void) countDown {
     self.count += 1;
-    if (self.time - self.count >= 0) {
+    if (self.time - 1 - self.count >= 0) {
+        if ((self.time - self.count) / 60 >= 1) {
+            self.mins = (self.time - self.count) / 60;
+            self.secs = (self.time - self.count) - self.mins * 60;
+        }
+        else {
+            self.secs = self.time - self.count;
+        }
         self.titleLabel.text = [NSString stringWithFormat:@"%ld", self.time - self.count];
+        [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
         NSLog(@"time: %ld count: %ld time - count %ld", self.time, self.count, self.time - self.count);
     } else {
         [self.timer invalidate];
@@ -132,5 +145,9 @@
     [self.sleepTimer invalidate];
     self.timer = nil;
     self.sleepTimer = nil;
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+}
+- (IBAction)brightnessSliderChanged:(UISlider *)sender {
+    [UIScreen mainScreen].brightness = self.brightnessSlider.value;
 }
 @end

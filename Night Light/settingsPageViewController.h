@@ -24,6 +24,11 @@
 
 @property (weak, nonatomic) IBOutlet UIPickerView *colourPicker;
 
+- (IBAction)brightnessSliderChanged:(UISlider *)sender;
+@property (weak, nonatomic) IBOutlet UISlider *brightnessSlider;
+
+@property (weak, nonatomic) IBOutlet UILabel *brightnessLabel;
+
 @property NSInteger currentColour;
 
 @end

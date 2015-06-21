@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jbB-Id-Gtv">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -79,7 +78,7 @@
                                     <constraint firstAttribute="height" constant="58" id="UUS-sv-bq9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Itj-eE-F4b">
@@ -102,9 +101,24 @@
                                 </state>
                                 <connections>
                                     <action selector="settingsButtonPressed:" destination="RCQ-aE-92U" eventType="touchUpInside" id="3FW-gM-5hM"/>
-                                    <segue destination="fM3-fc-r84" kind="presentation" identifier="settingsSegue" id="hu1-Sa-dJc"/>
+                                    <segue destination="fM3-fc-r84" kind="presentation" identifier="settingsSegue" id="GVA-gI-1ci"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brightness" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOn-GI-jgW">
+                                <rect key="frame" x="259" y="138" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="uG6-4p-1ds">
+                                <rect key="frame" x="200" y="167" width="200" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="196" id="sPC-SI-EsI"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="brightnessSliderChanged:" destination="RCQ-aE-92U" eventType="valueChanged" id="qa5-eh-Bg5"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -112,13 +126,17 @@
                             <constraint firstItem="nAc-ug-sjG" firstAttribute="bottom" secondItem="lVj-OS-Fpn" secondAttribute="top" id="EbW-p2-BhY"/>
                             <constraint firstAttribute="trailing" secondItem="nAc-ug-sjG" secondAttribute="trailing" id="Jzi-eg-qgS"/>
                             <constraint firstItem="QFn-Kw-ZEL" firstAttribute="top" secondItem="MKJ-Ts-eM0" secondAttribute="bottom" id="NAU-DW-xcy"/>
+                            <constraint firstItem="uG6-4p-1ds" firstAttribute="centerX" secondItem="vrC-1m-Q2B" secondAttribute="centerX" id="OTr-8u-LY4"/>
                             <constraint firstItem="nAc-ug-sjG" firstAttribute="top" secondItem="Rnp-Rb-3wn" secondAttribute="top" id="TxC-qU-mtv"/>
                             <constraint firstItem="QFn-Kw-ZEL" firstAttribute="trailing" secondItem="vrC-1m-Q2B" secondAttribute="trailing" id="bI4-NW-Kp7"/>
                             <constraint firstAttribute="bottom" secondItem="Itj-eE-F4b" secondAttribute="bottom" constant="20" symbolic="YES" id="bqH-rJ-vi8"/>
+                            <constraint firstItem="eOn-GI-jgW" firstAttribute="top" secondItem="vrC-1m-Q2B" secondAttribute="bottom" constant="8" symbolic="YES" id="cGh-HH-H64"/>
                             <constraint firstItem="vrC-1m-Q2B" firstAttribute="leading" secondItem="Rnp-Rb-3wn" secondAttribute="leadingMargin" id="djV-FO-YC4"/>
                             <constraint firstItem="Itj-eE-F4b" firstAttribute="leading" secondItem="nAc-ug-sjG" secondAttribute="leading" id="fqH-md-GS0"/>
                             <constraint firstItem="nAc-ug-sjG" firstAttribute="leading" secondItem="Rnp-Rb-3wn" secondAttribute="leading" id="hr8-tK-8e8"/>
+                            <constraint firstItem="eOn-GI-jgW" firstAttribute="centerX" secondItem="uG6-4p-1ds" secondAttribute="centerX" id="ivH-KV-n50"/>
                             <constraint firstItem="Itj-eE-F4b" firstAttribute="centerX" secondItem="nAc-ug-sjG" secondAttribute="centerX" id="jdN-tX-Toj"/>
+                            <constraint firstItem="uG6-4p-1ds" firstAttribute="top" secondItem="vrC-1m-Q2B" secondAttribute="bottom" constant="37" id="pOE-BF-aoj"/>
                             <constraint firstItem="Itj-eE-F4b" firstAttribute="leading" secondItem="Rnp-Rb-3wn" secondAttribute="leadingMargin" constant="-7" id="tyE-q6-qbs"/>
                             <constraint firstItem="Itj-eE-F4b" firstAttribute="trailing" secondItem="nAc-ug-sjG" secondAttribute="trailing" id="uFn-Ws-ppw"/>
                             <constraint firstItem="Itj-eE-F4b" firstAttribute="centerX" secondItem="vrC-1m-Q2B" secondAttribute="centerX" id="xeB-cn-iZL"/>
@@ -133,6 +151,8 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImage" destination="nAc-ug-sjG" id="Kku-Gr-VI0"/>
+                        <outlet property="brightnessLabel" destination="eOn-GI-jgW" id="Y4C-R7-R9T"/>
+                        <outlet property="brightnessSlider" destination="uG6-4p-1ds" id="R4u-yO-3Od"/>
                         <outlet property="settingsButton" destination="QFn-Kw-ZEL" id="qXr-eI-P25"/>
                         <outlet property="timePickerView" destination="Itj-eE-F4b" id="fFQ-0b-mm7"/>
                         <outlet property="titleLabel" destination="vrC-1m-Q2B" id="dWp-rL-gxP"/>
@@ -157,6 +177,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oVP-bR-CTV">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brightness" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6w-ZF-fX8">
+                                <rect key="frame" x="259" y="72" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4X0-ee-PPH">
                                 <rect key="frame" x="9" y="438" width="583" height="162"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -168,7 +194,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a colour" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBl-c5-pzJ">
                                 <rect key="frame" x="211" y="371" width="179" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKd-2k-D2J">
@@ -191,7 +217,7 @@
                                 </state>
                                 <connections>
                                     <action selector="staticViewButtonPressed:" destination="fM3-fc-r84" eventType="touchUpInside" id="Oz1-rD-MXP"/>
-                                    <segue destination="jbB-Id-Gtv" kind="presentation" identifier="staticSegue" id="gqa-01-gTc"/>
+                                    <segue destination="jbB-Id-Gtv" kind="presentation" identifier="staticSegue" id="mB4-Kv-Lya"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYc-Lt-UK8">
@@ -203,6 +229,16 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lfX-m0-n1z">
+                                <rect key="frame" x="200" y="101" width="200" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="196" id="9CL-Rk-FKs"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="brightnessSliderChanged:" destination="fM3-fc-r84" eventType="valueChanged" id="Cr0-8V-GE7"/>
+                                    <action selector="brightnessSliderChanged:" destination="RCQ-aE-92U" eventType="valueChanged" id="mBC-ol-6Vd"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -211,21 +247,27 @@
                             <constraint firstItem="4X0-ee-PPH" firstAttribute="top" secondItem="Q1x-qp-ySO" secondAttribute="bottom" constant="8" symbolic="YES" id="ASs-Bm-zlt"/>
                             <constraint firstItem="4X0-ee-PPH" firstAttribute="centerX" secondItem="QL3-ia-xoZ" secondAttribute="centerX" id="Dg8-zX-Zbd"/>
                             <constraint firstItem="oVP-bR-CTV" firstAttribute="bottom" secondItem="txm-cj-tQU" secondAttribute="top" id="FKa-Sz-xFz"/>
+                            <constraint firstItem="k6w-ZF-fX8" firstAttribute="centerX" secondItem="lfX-m0-n1z" secondAttribute="centerX" id="GNN-qT-WeT"/>
                             <constraint firstItem="Q1x-qp-ySO" firstAttribute="centerX" secondItem="YBl-c5-pzJ" secondAttribute="centerX" id="QdY-21-PzV"/>
+                            <constraint firstItem="lfX-m0-n1z" firstAttribute="top" secondItem="k6w-ZF-fX8" secondAttribute="bottom" constant="8" id="Yzx-ZK-opr"/>
                             <constraint firstItem="4X0-ee-PPH" firstAttribute="bottom" secondItem="txm-cj-tQU" secondAttribute="top" id="ewP-zw-4MN"/>
                             <constraint firstItem="kKd-2k-D2J" firstAttribute="leading" secondItem="QL3-ia-xoZ" secondAttribute="leadingMargin" id="hNN-zW-LkF"/>
                             <constraint firstItem="4X0-ee-PPH" firstAttribute="centerX" secondItem="Q1x-qp-ySO" secondAttribute="centerX" id="jJo-Kr-cZ5"/>
+                            <constraint firstItem="k6w-ZF-fX8" firstAttribute="centerX" secondItem="wYc-Lt-UK8" secondAttribute="centerX" id="koq-jc-yOS"/>
                             <constraint firstItem="oVP-bR-CTV" firstAttribute="leading" secondItem="QL3-ia-xoZ" secondAttribute="leading" id="oPS-OH-hBG"/>
                             <constraint firstItem="kKd-2k-D2J" firstAttribute="top" secondItem="TAp-FT-2tv" secondAttribute="bottom" id="tOz-k9-k2A"/>
                             <constraint firstItem="oVP-bR-CTV" firstAttribute="top" secondItem="QL3-ia-xoZ" secondAttribute="top" id="ttk-Ou-uJd"/>
                             <constraint firstItem="wYc-Lt-UK8" firstAttribute="centerX" secondItem="YBl-c5-pzJ" secondAttribute="centerX" id="wr5-uh-VtW"/>
                             <constraint firstItem="wYc-Lt-UK8" firstAttribute="top" secondItem="TAp-FT-2tv" secondAttribute="bottom" id="xcX-oe-kg8"/>
+                            <constraint firstItem="k6w-ZF-fX8" firstAttribute="top" secondItem="wYc-Lt-UK8" secondAttribute="bottom" constant="8" symbolic="YES" id="zGr-1R-pRw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="TitleLabel" destination="wYc-Lt-UK8" id="kpH-wt-Sdb"/>
                         <outlet property="backButton" destination="kKd-2k-D2J" id="pa6-wN-fGj"/>
                         <outlet property="backgroundImage" destination="oVP-bR-CTV" id="AjD-Hr-ZLl"/>
+                        <outlet property="brightnessLabel" destination="k6w-ZF-fX8" id="atN-M4-g3V"/>
+                        <outlet property="brightnessSlider" destination="lfX-m0-n1z" id="dGf-xb-0Ku"/>
                         <outlet property="chooseColourLabel" destination="YBl-c5-pzJ" id="WsA-bk-Ch5"/>
                         <outlet property="colourPicker" destination="4X0-ee-PPH" id="kA7-kx-wxo"/>
                         <outlet property="staticViewButton" destination="Q1x-qp-ySO" id="NaL-oe-aoh"/>
@@ -233,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yRL-3Q-uAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2023" y="868"/>
+            <point key="canvasLocation" x="2023" y="617"/>
         </scene>
         <!--Static View Controller-->
         <scene sceneID="xP1-7t-VEB">
@@ -261,6 +303,7 @@
                                 </state>
                                 <connections>
                                     <action selector="settingsButtonPressed:" destination="jbB-Id-Gtv" eventType="touchUpInside" id="ZJh-Ic-pAI"/>
+                                    <segue destination="fM3-fc-r84" kind="presentation" identifier="staticSettingsSegue" id="Fgm-lQ-CLb"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uqh-SU-8Pk">
@@ -277,7 +320,7 @@
                                     <constraint firstAttribute="height" constant="58" id="Lmq-3m-7Ap"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6L-fS-iGu">
@@ -290,24 +333,44 @@
                                 </state>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="jbB-Id-Gtv" eventType="touchUpInside" id="ODE-UT-OoV"/>
-                                    <segue destination="RCQ-aE-92U" kind="presentation" identifier="oldStyleSegue" id="1cT-49-QM6"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="oldStyleSegue" id="xOl-Qa-9ZE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brightness" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDU-QL-8RX">
+                                <rect key="frame" x="259" y="138" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZJk-G0-IWo">
+                                <rect key="frame" x="200" y="167" width="200" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="196" id="loL-3o-HUb"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="brightnessSliderChanged:" destination="jbB-Id-Gtv" eventType="valueChanged" id="LaR-xt-aBH"/>
+                                    <action selector="brightnessSliderChanged:" destination="RCQ-aE-92U" eventType="valueChanged" id="kEh-eV-ZXV"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="NDU-QL-8RX" firstAttribute="centerX" secondItem="ZJk-G0-IWo" secondAttribute="centerX" id="24C-5D-mZO"/>
                             <constraint firstItem="Wn1-dx-wXY" firstAttribute="top" secondItem="m65-wr-dik" secondAttribute="top" id="70X-ss-FcC"/>
                             <constraint firstItem="g6L-fS-iGu" firstAttribute="leading" secondItem="Upg-Al-eI8" secondAttribute="leading" id="7Rq-aG-Ovr"/>
                             <constraint firstItem="k3x-f7-UjN" firstAttribute="top" secondItem="DSz-ob-DZ7" secondAttribute="bottom" id="I1I-Rn-4Zh"/>
                             <constraint firstItem="Uqh-SU-8Pk" firstAttribute="centerX" secondItem="Wn1-dx-wXY" secondAttribute="centerX" id="JDP-Nv-tv5"/>
                             <constraint firstItem="g6L-fS-iGu" firstAttribute="leading" secondItem="m65-wr-dik" secondAttribute="leadingMargin" id="Jhw-Gs-Ym9"/>
+                            <constraint firstItem="ZJk-G0-IWo" firstAttribute="top" secondItem="NDU-QL-8RX" secondAttribute="bottom" constant="8" symbolic="YES" id="LIG-vR-fF9"/>
                             <constraint firstAttribute="bottom" secondItem="Uqh-SU-8Pk" secondAttribute="bottom" constant="20" symbolic="YES" id="QAi-LN-UaS"/>
                             <constraint firstItem="Upg-Al-eI8" firstAttribute="top" secondItem="k3x-f7-UjN" secondAttribute="bottom" constant="9" id="TQv-FC-9wf"/>
                             <constraint firstItem="k3x-f7-UjN" firstAttribute="top" secondItem="g6L-fS-iGu" secondAttribute="top" id="VLa-5c-trx"/>
                             <constraint firstAttribute="trailing" secondItem="Wn1-dx-wXY" secondAttribute="trailing" id="Yv4-iX-NLS"/>
                             <constraint firstItem="Upg-Al-eI8" firstAttribute="top" secondItem="g6L-fS-iGu" secondAttribute="bottom" constant="8" symbolic="YES" id="ars-Wg-ONH"/>
+                            <constraint firstItem="NDU-QL-8RX" firstAttribute="top" secondItem="Upg-Al-eI8" secondAttribute="bottom" constant="8" symbolic="YES" id="jW6-Wt-hev"/>
                             <constraint firstItem="k3x-f7-UjN" firstAttribute="trailing" secondItem="Upg-Al-eI8" secondAttribute="trailing" id="jyx-76-77c"/>
                             <constraint firstItem="Wn1-dx-wXY" firstAttribute="leading" secondItem="m65-wr-dik" secondAttribute="leading" id="rR9-wJ-bK5"/>
+                            <constraint firstItem="NDU-QL-8RX" firstAttribute="centerX" secondItem="Upg-Al-eI8" secondAttribute="centerX" id="ugC-en-xXD"/>
                             <constraint firstItem="Uqh-SU-8Pk" firstAttribute="centerX" secondItem="Upg-Al-eI8" secondAttribute="centerX" id="zT8-e2-9ns"/>
                             <constraint firstItem="Wn1-dx-wXY" firstAttribute="bottom" secondItem="nnw-8U-klT" secondAttribute="top" id="zoo-Wm-ukR"/>
                         </constraints>
@@ -315,6 +378,8 @@
                     <connections>
                         <outlet property="backButton" destination="g6L-fS-iGu" id="P5H-Ly-0w9"/>
                         <outlet property="backgroundImage" destination="Wn1-dx-wXY" id="BK3-SE-ft2"/>
+                        <outlet property="brightnessLabel" destination="NDU-QL-8RX" id="7je-rq-c4q"/>
+                        <outlet property="brightnessSlider" destination="ZJk-G0-IWo" id="5Qi-fE-lpf"/>
                         <outlet property="settingsButton" destination="k3x-f7-UjN" id="h6e-wZ-Yc2"/>
                         <outlet property="timePicker" destination="Uqh-SU-8Pk" id="ueJ-ah-uFG"/>
                         <outlet property="titleLabel" destination="Upg-Al-eI8" id="axM-I6-Ymk"/>
@@ -330,4 +395,7 @@
         <image name="backArrows.png" width="250" height="242"/>
         <image name="settings.png" width="300" height="294"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Fgm-lQ-CLb"/>
+    </inferredMetricsTieBreakers>
 </document>

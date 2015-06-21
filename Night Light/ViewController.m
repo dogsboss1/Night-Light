@@ -50,7 +50,7 @@
     pageContentViewController.pageIndex = index;
     
     self.backgroundImage.image = [UIImage imageNamed:_pageImages[index]];
-    NSLog(@"%ld", index);
+    //NSLog(@"%ld", index);
     
     if (index == 1) {
         pageContentViewController.textColour = @"white";
