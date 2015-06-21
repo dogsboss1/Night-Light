@@ -17,8 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _pageImages = @[@"white", @"black", @"blue", @"cyan", @"green", @"orange", @"pink", @"red", @"yellow", @"rainbow"];
-    _pageTitles = @[@"white", @"black", @"blue", @"cyan", @"green", @"orange", @"pink", @"red", @"yellow", @"rainbow"];
+    self.pageImages = @[@"white", @"black", @"blue", @"cyan", @"green", @"orange", @"pink", @"red", @"yellow", @"rainbow"];
+    self.pageTitles = @[@"white", @"black", @"blue", @"cyan", @"green", @"orange", @"pink", @"red", @"yellow", @"rainbow"];
     
     [self.startAgainButton setTitle:@" " forState:UIControlStateNormal];
     
@@ -49,8 +49,8 @@
     pageContentViewController.titleText = self.pageTitles[index];
     pageContentViewController.pageIndex = index;
     
-    self.backgroundImage.image = [UIImage imageNamed:_pageImages[index]];
-    //NSLog(@"%ld", index);
+    self.backgroundImage.image = [UIImage imageNamed:self.pageImages[self.index]];
+    NSLog(@"index: %ld, colour: %@", self.index, self.pageImages[self.index]);
     
     if (index == 1) {
         pageContentViewController.textColour = @"white";
@@ -73,6 +73,7 @@
     }
     
     index--;
+    self.index = index;
     return [self viewControllerAtIndex:index];
 }
 
@@ -88,6 +89,7 @@
     if (index == [self.pageTitles count]) {
         return nil;
     }
+    self.index = index;
     return [self viewControllerAtIndex:index];
 }
 

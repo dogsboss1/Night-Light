@@ -49,6 +49,10 @@
     self.timePickerView.delegate = self;
     
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+    [self.timer invalidate];
+    [self.sleepTimer invalidate];
+    self.timer = nil;
+    self.sleepTimer = nil;
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -124,11 +128,37 @@
         if ((self.time - self.count) / 60 >= 1) {
             self.mins = (self.time - self.count) / 60;
             self.secs = (self.time - self.count) - self.mins * 60;
+            if (self.mins > 1 && self.secs > 1) {
+                self.titleLabel.text = [NSString stringWithFormat:@"%ld Mins %ld Secs", self.mins, self.secs];
+            }
+            else if (self.mins > 1 && self.secs == 0) {
+                self.titleLabel.text = [NSString stringWithFormat:@"%ld Mins", self.mins];
+            }
+            else if (self.mins > 1 && self.secs == 1){
+                self.titleLabel.text = [NSString stringWithFormat:@"%ld Mins %ld Sec", self.mins, self.secs];
+            }
+            else if (self.mins == 1 && self.secs > 1) {
+                self.titleLabel.text = [NSString stringWithFormat:@"%ld Min %ld Secs", self.mins, self.secs];
+            }
+            else if (self.mins == 1 && self.secs == 1) {
+                self.titleLabel.text = [NSString stringWithFormat:@"%ld Min %ld Sec", self.mins, self.secs];
+            }
+            else if (self.mins == 1 && self.secs == 0) {
+                self.titleLabel.text = @"1 Min";//[NSString stringWithFormat:@"%ld Mins", self.mins];
+            }
+            else {
+                self.titleLabel.text = @"Hello";
+            }
         }
         else {
             self.secs = self.time - self.count;
+            if (self.secs > 1) {
+                self.titleLabel.text = [NSString stringWithFormat:@"%ld Secs", self.secs];
+            }
+            else {
+                self.titleLabel.text = [NSString stringWithFormat:@"%ld Sec", self.secs];
+            }
         }
-        self.titleLabel.text = [NSString stringWithFormat:@"%ld", self.time - self.count];
         [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
         NSLog(@"time: %ld count: %ld time - count %ld", self.time, self.count, self.time - self.count);
     } else {
