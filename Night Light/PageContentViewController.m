@@ -31,6 +31,7 @@
     
     self.backgroundImage.image = [UIImage imageNamed:self.imageFile];
     self.titleLabel.text = self.titleText;
+    
     if ([self.textColour isEqualToString:@"white"]) {
         self.titleLabel.textColor = [UIColor whiteColor];
         self.timePickerView.backgroundColor = [UIColor whiteColor];
@@ -53,6 +54,7 @@
     [self.sleepTimer invalidate];
     self.timer = nil;
     self.sleepTimer = nil;
+
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
