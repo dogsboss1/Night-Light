@@ -32,6 +32,7 @@
     //NSLog(@"colour: %ld", [self.delegate getCurentColour]);
     
     self.timerHasBegun = false;
+    self.tapWithinTimeLastTapped = false;
     
     self.brightnessSlider.value = [UIScreen mainScreen].brightness;
     
@@ -114,13 +115,20 @@
 
 - (void)handleSingleTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer {
     CGPoint point = [tapGestureRecognizer locationInView:self.view];
+    [self.stopExplosionTimer invalidate];
+    
+    [self.explosionImageView stopAnimating];
     
     if (self.timerHasBegun) {
         self.explosionImageView.frame = CGRectMake(point.x - (142 / 2), point.y - 100, 142, 200);
         
         [self.explosionImageView startAnimating];
         
-        [self performSelector:@selector(stopAnimatingExplosion) withObject:self afterDelay:0.81];
+        self.stopExplosionTimer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                                   target:self
+                                                                 selector:@selector(stopAnimatingExplosion)
+                                                                 userInfo:nil
+                                                                  repeats:NO];
     }
 }
 

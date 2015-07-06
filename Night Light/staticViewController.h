@@ -48,11 +48,12 @@
 @property (strong, nonatomic) NSArray *pageTitles;
 
 @property BOOL timerHasBegun;
-
+@property BOOL tapWithinTimeLastTapped;
 @property NSInteger count;
 @property NSInteger time;
 @property NSTimer *timer;
 @property NSTimer *sleepTimer;
+@property NSTimer *stopExplosionTimer;
 
 @property NSString *textColour;
 
