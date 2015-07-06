@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "staticViewController.h"
+#import "PageContentViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

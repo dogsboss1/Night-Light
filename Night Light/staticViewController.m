@@ -12,6 +12,8 @@
     NSArray *_pickerData;
 }
 
+-(void)handleSingleTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer;
+
 @end
 
 @implementation staticViewController
@@ -29,6 +31,8 @@
     
     //NSLog(@"colour: %ld", [self.delegate getCurentColour]);
     
+    self.timerHasBegun = false;
+    
     self.brightnessSlider.value = [UIScreen mainScreen].brightness;
     
     _pickerData = @[@"5", @"10", @"20", @"30", @"45", @"1 Min", @"1.5 Mins", @"2 Mins", @"2.5 Mins", @"3 Mins", @"5 Mins"];
@@ -36,6 +40,24 @@
     
     self.backgroundImage.image = [UIImage imageNamed:self.pageTitles[[self.delegate getCurentColour]]];
     self.titleLabel.text = self.pageTitles[[self.delegate getCurentColour]];
+    
+    NSArray *imageNames = @[@"tmp-8.gif", @"tmp-9.gif", @"tmp-10.gif", @"tmp-11.gif",
+                            @"tmp-12.gif", @"tmp-13.gif", @"tmp-14.gif", @"tmp-15.gif",
+                            @"tmp-16.gif", @"tmp-0.gif", @"tmp-1.gif", @"tmp-2.gif",
+                            @"tmp-3.gif", @"tmp-4.gif", @"tmp-5.gif", @"tmp-6.gif",
+                            @"tmp-7.gif"];
+    
+    NSMutableArray *images = [[NSMutableArray alloc] init];
+    for (int i = 0; i < imageNames.count; i++) {
+        [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
+    }
+    
+    // Normal Animation
+    self.explosionImageView.animationImages = images;
+    self.explosionImageView.animationDuration = 1;
+    
+    [self.tapButton setTitle:@"" forState:UIControlStateNormal];
+    
     
     if ([self.pageTitles[[self.delegate getCurentColour]] isEqualToString:@"black"]) {
         self.titleLabel.textColor = [UIColor whiteColor];
@@ -51,6 +73,9 @@
         [self.settingsButton setImage:[UIImage imageNamed:@"settings"] forState:UIControlStateNormal];
         self.brightnessLabel.textColor = [UIColor blackColor];
     }
+    
+    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture:)];
+    [self.view addGestureRecognizer:singleTapGestureRecognizer];
     
     self.timePicker.dataSource = self;
     self.timePicker.delegate = self;
@@ -87,8 +112,22 @@
     return label;
 }*/
 
+- (void)handleSingleTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer {
+    CGPoint point = [tapGestureRecognizer locationInView:self.view];
+    
+    if (self.timerHasBegun) {
+        self.explosionImageView.frame = CGRectMake(point.x - (142 / 2), point.y - 100, 142, 200);
+        
+        [self.explosionImageView startAnimating];
+        
+        [self performSelector:@selector(stopAnimatingExplosion) withObject:self afterDelay:0.81];
+    }
+}
+
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.titleLabel.text = [NSString stringWithFormat:@"%@", _pickerData[row]];
+    
+    self.timerHasBegun = true;
     
     [self.timer invalidate];
     [self.sleepTimer invalidate];
@@ -182,6 +221,10 @@
     //NSLog(@"Mins:  %ld, secs: %ld", self.mins, self.secs);
 }
 
+- (void) stopAnimatingExplosion {
+    [self.explosionImageView stopAnimating];
+    self.explosionImageView.image = [UIImage imageNamed:@""];
+}
 
 - (IBAction)settingsButtonPressed:(UIButton *)sender {
     [self performSegueWithIdentifier:@"staticSettingsSegue" sender:self];
@@ -203,5 +246,10 @@
 
 - (IBAction)brightnessSliderChanged:(UISlider *)sender {
     [UIScreen mainScreen].brightness = self.brightnessSlider.value;
+}
+- (IBAction)tapButtonPressed:(UIButton *)sender {
+    [self.explosionImageView startAnimating];
+    
+    [self performSelector:@selector(stopAnimatingExplosion) withObject:self afterDelay:0.81];
 }
 @end

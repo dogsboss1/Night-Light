@@ -107,7 +107,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brightness" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOn-GI-jgW">
                                 <rect key="frame" x="259" y="138" width="82" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="uG6-4p-1ds">
@@ -180,7 +180,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brightness" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6w-ZF-fX8">
                                 <rect key="frame" x="259" y="72" width="82" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4X0-ee-PPH">
@@ -339,7 +339,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brightness" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDU-QL-8RX">
                                 <rect key="frame" x="259" y="138" width="82" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZJk-G0-IWo">
@@ -352,12 +352,25 @@
                                     <action selector="brightnessSliderChanged:" destination="RCQ-aE-92U" eventType="valueChanged" id="kEh-eV-ZXV"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vz6-dB-tYo">
+                                <rect key="frame" x="285" y="285" width="30" height="30"/>
+                                <state key="normal" title="tap">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButtonPressed:" destination="jbB-Id-Gtv" eventType="touchUpInside" id="zh2-fm-HKm"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Fl-TR-bw2">
+                                <rect key="frame" x="344" y="236" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NDU-QL-8RX" firstAttribute="centerX" secondItem="ZJk-G0-IWo" secondAttribute="centerX" id="24C-5D-mZO"/>
                             <constraint firstItem="Wn1-dx-wXY" firstAttribute="top" secondItem="m65-wr-dik" secondAttribute="top" id="70X-ss-FcC"/>
                             <constraint firstItem="g6L-fS-iGu" firstAttribute="leading" secondItem="Upg-Al-eI8" secondAttribute="leading" id="7Rq-aG-Ovr"/>
+                            <constraint firstItem="Vz6-dB-tYo" firstAttribute="centerY" secondItem="Wn1-dx-wXY" secondAttribute="centerY" id="Cl0-EQ-scE"/>
                             <constraint firstItem="k3x-f7-UjN" firstAttribute="top" secondItem="DSz-ob-DZ7" secondAttribute="bottom" id="I1I-Rn-4Zh"/>
                             <constraint firstItem="Uqh-SU-8Pk" firstAttribute="centerX" secondItem="Wn1-dx-wXY" secondAttribute="centerX" id="JDP-Nv-tv5"/>
                             <constraint firstItem="g6L-fS-iGu" firstAttribute="leading" secondItem="m65-wr-dik" secondAttribute="leadingMargin" id="Jhw-Gs-Ym9"/>
@@ -370,6 +383,7 @@
                             <constraint firstItem="NDU-QL-8RX" firstAttribute="top" secondItem="Upg-Al-eI8" secondAttribute="bottom" constant="8" symbolic="YES" id="jW6-Wt-hev"/>
                             <constraint firstItem="k3x-f7-UjN" firstAttribute="trailing" secondItem="Upg-Al-eI8" secondAttribute="trailing" id="jyx-76-77c"/>
                             <constraint firstItem="Wn1-dx-wXY" firstAttribute="leading" secondItem="m65-wr-dik" secondAttribute="leading" id="rR9-wJ-bK5"/>
+                            <constraint firstItem="Vz6-dB-tYo" firstAttribute="centerX" secondItem="ZJk-G0-IWo" secondAttribute="centerX" id="sdw-EC-vke"/>
                             <constraint firstItem="NDU-QL-8RX" firstAttribute="centerX" secondItem="Upg-Al-eI8" secondAttribute="centerX" id="ugC-en-xXD"/>
                             <constraint firstItem="Uqh-SU-8Pk" firstAttribute="centerX" secondItem="Upg-Al-eI8" secondAttribute="centerX" id="zT8-e2-9ns"/>
                             <constraint firstItem="Wn1-dx-wXY" firstAttribute="bottom" secondItem="nnw-8U-klT" secondAttribute="top" id="zoo-Wm-ukR"/>
@@ -380,7 +394,9 @@
                         <outlet property="backgroundImage" destination="Wn1-dx-wXY" id="BK3-SE-ft2"/>
                         <outlet property="brightnessLabel" destination="NDU-QL-8RX" id="7je-rq-c4q"/>
                         <outlet property="brightnessSlider" destination="ZJk-G0-IWo" id="5Qi-fE-lpf"/>
+                        <outlet property="explosionImageView" destination="1Fl-TR-bw2" id="mlR-Ba-3Sw"/>
                         <outlet property="settingsButton" destination="k3x-f7-UjN" id="h6e-wZ-Yc2"/>
+                        <outlet property="tapButton" destination="Vz6-dB-tYo" id="D6w-Qt-Pt5"/>
                         <outlet property="timePicker" destination="Uqh-SU-8Pk" id="ueJ-ah-uFG"/>
                         <outlet property="titleLabel" destination="Upg-Al-eI8" id="axM-I6-Ymk"/>
                     </connections>

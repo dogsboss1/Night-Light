@@ -15,6 +15,12 @@
 
 @end
 
+//@protocol stopStaticTimerDelegate <NSObject>
+
+//- (BOOL) shouldStopTimer;
+
+//@end
+
 @interface staticViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -34,7 +40,14 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *brightnessLabel;
 
+- (IBAction)tapButtonPressed:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *explosionImageView;
+
+@property (weak, nonatomic) IBOutlet UIButton *tapButton;
+
 @property (strong, nonatomic) NSArray *pageTitles;
+
+@property BOOL timerHasBegun;
 
 @property NSInteger count;
 @property NSInteger time;
@@ -47,5 +60,7 @@
 @property NSInteger secs;
 
 @property (nonatomic, weak) id<staticViewDelegate> delegate;
+
+//@property (nonatomic, weak) id<stopStaticTimerDelegate> timerDelegate;
 
 @end
